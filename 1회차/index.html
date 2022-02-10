@@ -7,30 +7,36 @@
    <title>don't make memo list</title>
 </head>
 <style>
-    .output-box {
-        width: 19.5%;
-        height: 300px;
-        border: 1px solid black;
+    .main-contain {
+        display: block;
     }
 
-    .save-button {
-        position: absolute;
-        left: 20%;
-        top: 10px;
+    .output-box {
+        width: 372px;
+        height: 300px;
+        border: 1px solid black;
+        margin-top: 5px;
+    }
+
+    .fnc-btn {
+        border: none;
+        background-color: pink;
+        color: rgb(77, 75, 75);
+        cursor: pointer;
+        width: 183px;
     }
     
-    .clear-button {
-        position: absolute;
-        left: 20%;
-        top: 65px;
-    }
 </style>
 <body>
     <div class="main-contain">
-        <textarea id="memoarea" cols ="50" rows="5" placeholder="메모입력"></textarea> 
+        <div>
+            <textarea id="memoarea" cols ="50" rows="5" placeholder="메모입력"></textarea> 
+        </div>
+        <div>
+            <button class="save-button fnc-btn">저장</button>
+            <button class="clear-button fnc-btn">삭제</button>
+        </div>
         <div class="output-box"></div>
-        <button class="save-button">저장</button>
-        <button class="clear-button">삭제</button>
     </div>
 </body>
 <script>
