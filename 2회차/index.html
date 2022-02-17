@@ -75,7 +75,28 @@
     const carSlide = document.querySelector('.slide');
     const carDiv = document.querySelectorAll('.slide div');
 
-    const prevBtn = document.querySelector('#prev-bnt');
+    const prevBtn = document.querySelector('#prev-btn');
     const nextBtn = document.querySelector('#next-btn');
+
+    let counter = 1;
+    const size = carDiv[0].clientWidth;
+    carSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    
+    // btn
+    nextBtn.addEventListener('click', () => {
+        if(counter >= carDiv.length -1) return;
+        carSlide.style.transition = "transform 0.4s ease-in-out";
+        counter++;
+        carSlide.style.transform = 'translateX(' + (size * counter) + 'px)';
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if(counter <=0) return;
+        carSlide.style.transition = "transform 0.4s ease-in-out";
+        counter--;
+        carSlide.style.transform = 'translateX(' + (size * counter) + 'px)';
+    });
+
+    
 </script>
 </html>
